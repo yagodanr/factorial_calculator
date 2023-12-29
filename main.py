@@ -9,6 +9,9 @@ def factorial():
     max_known = 5
 
     def inner(n: int) -> int:
+        if n < 0:
+            raise ValueError("Number has to be positive(>0)")
+
         nonlocal memorized
         ans = memorized.get(n)
         if ans is not None:
